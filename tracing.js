@@ -19,7 +19,7 @@ diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.INFO);
 const traceExporter = new OTLPTraceExporter({
   url: "http://localhost:5080/api/logs_traces_correlation/traces",
   headers: {
-    Authorization: "Basic cm9vdEBleGFtcGxlLmNvbTpPaHI2S25JY0F4R01VSllv",
+    Authorization: "",
     "stream-name": "logs_traces_correlation",
   },
   concurrentExports: 10,  // Increase this to handle more concurrent requests

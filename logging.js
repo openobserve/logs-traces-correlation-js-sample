@@ -19,11 +19,11 @@ const logger = pino({
     }
 },
   new pinoOpenObserve({
-    url: 'http://localhost:5080/',
-    organization: 'logs_traces_correlation',
+    url: "",
+    organization: "logs_traces_correlation",
     auth: {
-      username: "root@example.com",
-      password: "Ohr6KnIcAxGMUJYo",
+      username: "",
+      password: "",
     },
     streamName: "logs_traces_correlation",
     batchSize: 1,
