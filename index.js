@@ -18,9 +18,14 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
   logger.info({ traceId: req.traceId, spanId: req.spanId }, 'Received request');
+  console.log(req.traceId, req.spanId, 'Received request');
+  
   res.send('Hello World!');
 });
 
 app.listen(port, () => {
+  console.log('Listening on port ' + port);
+
+  
   logger.info({ traceId: 'server-start', spanId: 'server-start' }, `Server is listening at http://localhost:${port}`);
 });

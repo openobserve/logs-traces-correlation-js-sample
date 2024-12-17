@@ -15,6 +15,7 @@
     "@opentelemetry/exporter-trace-otlp-proto": "^0.56.0",
     "@opentelemetry/sdk-node": "^0.56.0",
     "express": "^4.19.2",
-    "pino": "^9.5.0"
+    "pino": "^9.5.0",
+    "pino-abstract-transport": "^2.0.0"
   }
 }

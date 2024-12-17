@@ -1,31 +1,32 @@
-const pino = require('pino');
-const { trace, context } = require('@opentelemetry/api');
-const OpenobserveTransport = require('@openobserve/pino-openobserve');
+const pino = require("pino");
+const { trace, context } = require("@opentelemetry/api");
 
 const logger = pino({
-  level: 'info',
+  level: "info",
   formatters: {
     log: (object) => {
+      console.log(object, "OBJECT----");
+
       const spanContext = trace.getSpan(context.active());
       if (spanContext) {
         object.traceId = spanContext.spanContext().traceId;
         object.spanId = spanContext.spanContext().spanId;
       } else {
-        object.traceId = 'no-trace-id';
-        object.spanId = 'no-span-id';
+        object.traceId = "no-trace-id";
+        object.spanId = "no-span-id";
       }
       return object;
     },
   },
   transport: {
-    target: OpenobserveTransport,
+    target: "./my-transform.js",
     options: {
-      url: 'https://alpha1.dev.zinclabs.dev/',
-      organization: 'default',
-      streamName: 'logs_traces_correlation',
+      url: "https://alpha1.dev.zinclabs.dev/",
+      organization: "default",
+      streamName: "logs_traces_correlation",
       auth: {
-        username: 'omkar@openobserve.ai',
-        password: 'psKcmw4NRv6uiT0s',
+        username: "",
+        password: "",
       },
     },
   },
