@@ -20,7 +20,7 @@
     "@opentelemetry/sdk-node": "^0.38.0",
     "@opentelemetry/sdk-trace-node": "^1.25.1",
     "@opentelemetry/semantic-conventions": "^1.25.1",
-    "express": "^4.19.2",
+    "express": "^4.22.3",
     "pino": "^9.2.0",
     "winston": "^3.13.1"
   }
